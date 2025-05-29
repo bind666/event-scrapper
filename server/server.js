@@ -57,7 +57,7 @@ setInterval(async () => {
     console.log('Refreshing events...');
     cachedEvents = await scrapeEvents();
     console.log(`Updated to ${cachedEvents.length} events.`);
-}, 2 * 60 * 1000);
+}, 15 * 60 * 1000);
 
 app.get('/api/events', (req, res) => {
     res.json(cachedEvents);
