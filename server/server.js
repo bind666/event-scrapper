@@ -43,8 +43,6 @@ async function scrapeEvents() {
     return events;
 }
 
-
-
 // Initial scrape and cache
 (async () => {
     console.log('Scraping initial events...');
