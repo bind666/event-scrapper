@@ -4,7 +4,7 @@ import cors from 'cors';
 import puppeteer from 'puppeteer';
 
 const app = express();
-app.use(cors());
+app.use(cors({}));
 app.use(express.json());
 
 let cachedEvents = [];
@@ -57,7 +57,7 @@ setInterval(async () => {
     console.log('Refreshing events...');
     cachedEvents = await scrapeEvents();
     console.log(`Updated to ${cachedEvents.length} events.`);
-}, 15 * 60 * 1000);
+}, 2 * 60 * 1000);
 
 app.get('/api/events', (req, res) => {
     res.json(cachedEvents);
